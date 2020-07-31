@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: gold;
+        }
+
+        /* 扇形 */
+        .sector {
+            width: 0;
+            height: 0;
+            border: 100px solid red;
+            border-color: red transparent transparent transparent;
+            border-radius: 50%;
+            background: #fff;
+
+        }
+
+        /* 三角形 */
+        .triangle {
+            width: 0;
+            height: 0;
+            border-left: 50px solid red;
+            border-right: 50px solid #fff;
+            border-top: 50px solid #fff;
+            border-bottom: 50px solid red;
+        }
+
+        /* 圆 */
+        .circle {
+            border-radius: 50%;
+        }
+
+        /* 半圆 */
+        .halfCircle {
+            width: 50px;
+            border-left: 50px solid #fff;
+            border-radius: 0 50% 50% 0;
+        }
+
+        /* 椭圆 */
+        .oval {
+            height: 50px;
+            border-radius: 50px/25px;/* x轴/y轴 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box sector">扇形</div>
+    <div class="box triangle">三角形</div>
+    <div class="box circle">圆</div>
+    <div class="box halfCircle">半圆</div>
+    <div class="box oval">椭圆</div>
+</body>
+
+</html>

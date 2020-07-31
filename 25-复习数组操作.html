@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var books = [{
+        id: 1,
+        name: '三国演义',
+        date: 2525609975000
+    }, {
+        id: 2,
+        name: '水浒传',
+        date: 2525609975000
+    }, {
+        id: 3,
+        name: '红楼梦',
+        date: 2525609975000
+    }, {
+        id: 4,
+        name: '西游记',
+        date: 2525609975000
+    }]
+//新增-push
+//删除-splice(删除的索引,删除的个数,[插入的数据])
+//修改-索引值
+    /*查询
+    (1)查询列表
+    let result = books.filter(t => t.id<3)//查询满足条件的所有
+    (2)查询单个
+    let result = books.find(t => t.id<3)//查询满足条件的第一个,返回对象
+    */
+    /*
+    判断
+    (1)每一个
+    let result = books.every(t => t.id>0)//是否,每一个都满足...,返回布尔类型
+    (2)有一个
+    let result = books.some(t => t.id>0)//是否,有一个满足...,返回布尔类型
+    */
+    /*
+    遍历
+    (1)通过foreach,不能中断
+    var result = books.forEach(t=>{//每一个,返回值为undefined
+        console.log(t.id)
+    })
+    (2)通过some,可以中断(return true)
+    books.some(t=>{//只要有一个满足条件(return true),中断了
+        console.log(t.id)
+        if(t.id==3) return true
+ ================================================
+           this.books.some(t => {//只要有一个满足条件(return true),中断了
+                  if (t.id == this.id){
+                    this.name=t.name;
+                  }
+                  return true;
+                })
+==========================================
+    })
+    (3)通过for,可以用break中断
+    for (let i = 0; i < books.length; i++) {
+        console.log(books[i].id)
+        if(books[i].id == 3) break
+    }
+    */
+    /*
+    生成
+    (1)通过map,得到某些属性
+    let result = books.map(t=> t.id)//取到数组中默写属性,[1,2,3,4]
+    (2)通reduce,统计某些属性
+    let result = books.reduce((total, current)=>total+current.id, 0)
+    */
+
+
+// console.log(result)
+</script>
+
+</html>

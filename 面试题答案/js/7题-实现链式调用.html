@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class People {
+            constructor(name) {
+                var that = this
+                this.name = name;
+            }
+            say() {
+                console.log('会说话');
+                // return this;
+                // 为了实现参数传递 用下列返回方式
+                return new People(name)
+            }
+            sing(){
+                console.log('唱歌');
+                return this;
+            }
+            run=()=>{
+                console.log('run');
+            }
+        }
+
+        var male = new People('zhangsan')
+        male.say().sing().run();
+
+        console.dir(People);
+    </script>
+</body>
+
+</html>

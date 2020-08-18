@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <div class="node_1">
+            <div class="node_1_1"></div>
+            <div class="node_1_2"></div>
+            <div class="node_1_3"></div>
+        </div>
+        <div class="node_2">
+            <div class="node_2_1"></div>
+            <div class="node_2_2"></div>
+        </div>
+        <div class="node_3"></div>
+    </div>
+    <script>
+        // --------------------------DFS---------------------
+        const container = document.getElementById('container');
+        const dfs = (node) => {
+            const nodes = [] // 存
+            const stoke = [] // 栈 先进后出
+            if (node) {
+                stoke.push(node)
+                while (stoke.length) {
+                    const item = stoke.pop()
+                    nodes.push(item)
+                    for (let i = item.children.length - 1; i >= 0; i--) {
+                        stoke.push(item.children[i])
+                    }
+                }
+            }
+            return nodes
+        }
+        console.log(dfs(container));
+
+        // --------------------------BFS---------------------
+        const bfs = (node) => {
+            const nodes = [] // 存
+            const stoke = [] // 队列 一侧入一侧出 
+            if (node) {
+                stoke.push(node)
+                while (stoke.length) {
+                    const item = stoke.shift()
+                    nodes.push(item)
+                    for (const t of item.children) {
+                        stoke.push(t)
+                    }
+                }
+            }
+            return nodes
+        }
+        console.log(bfs(container));
+    </script>
+</body>
+
+</html>

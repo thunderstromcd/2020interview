@@ -3,6 +3,8 @@
 const createAry = function(args){
     
     let handler = {
+        // target为目标对象
+        // propKey 是键名
         get: function(target,propKey,reciever){
             // 使用Reflect查找属性名 
             // 此时数组的属性名为字符串,转换后判断他是否为负数
